@@ -6,16 +6,23 @@
 #define OOP_RETRAGERE_H
 
 # include "TRANZACTIE.h"
+# include "ContBancar.h"
 
 class RETRAGERE : public TRANZACTIE {
 private:
-    int pin;
+    ContBancar* cont;
 public:
-    void inregistrareRetragere() override;
+    RETRAGERE(int id, float suma, int pin, ContBancar *cont);
 
-    int getPin() const;
+    ContBancar *getCont() const;
 
-    void setPin(int pin);
+    void setCont(ContBancar *cont);
+
+    bool operator==(const RETRAGERE &rhs) const;
+
+    bool operator!=(const RETRAGERE &rhs) const;
+
+    void executa() override;
 };
 
 

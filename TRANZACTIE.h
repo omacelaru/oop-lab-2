@@ -8,19 +8,36 @@
 # include <string>
 
 class TRANZACTIE {
-private:
-    static int numar_tranzactii;
 protected:
+    static int numar_tranzactii;
+    int id;
     float suma;
-    std::string iban;
-public:
-    virtual void inregistrareDepunere() = 0;
+    int pin;
 
-    virtual void inregistrareRetragere() = 0;
+public:
+    TRANZACTIE(int id, float suma, int pin);
+
+    static int getNumarTranzactii();
+
+    int getId() const;
+
+    void setId(int id);
+
+    static void setNumarTranzactii(int numarTranzactii);
 
     float getSuma() const;
 
     void setSuma(float suma);
+
+    bool operator==(const TRANZACTIE &rhs) const;
+
+    bool operator!=(const TRANZACTIE &rhs) const;
+
+    virtual void executa() = 0;
+
+    int getPin() const;
+
+    void setPin(int pin);
 };
 
 

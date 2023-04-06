@@ -4,6 +4,25 @@
 
 #include "DEPUNERE.h"
 
-void DEPUNERE::inregistrareDepunere() {
-
+ContBancar *DEPUNERE::getCont() const {
+    return cont;
 }
+
+void DEPUNERE::setCont(ContBancar *cont) {
+    DEPUNERE::cont = cont;
+}
+
+bool DEPUNERE::operator==(const DEPUNERE &rhs) const {
+    return static_cast<const TRANZACTIE &>(*this) == static_cast<const TRANZACTIE &>(rhs) &&
+           cont == rhs.cont;
+}
+
+bool DEPUNERE::operator!=(const DEPUNERE &rhs) const {
+    return !(rhs == *this);
+}
+
+void DEPUNERE::executa() {
+    cont->depune(suma,pin);
+}
+
+DEPUNERE::DEPUNERE(int id, float suma, int pin, ContBancar *cont) : TRANZACTIE(id, suma, pin), cont(cont) {}

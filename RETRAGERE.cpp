@@ -4,14 +4,26 @@
 
 #include "RETRAGERE.h"
 
-void RETRAGERE::inregistrareRetragere() {
-
+ContBancar *RETRAGERE::getCont() const {
+    return cont;
 }
 
-int RETRAGERE::getPin() const {
-    return pin;
+void RETRAGERE::setCont(ContBancar *cont) {
+    RETRAGERE::cont = cont;
 }
 
-void RETRAGERE::setPin(int pin) {
-    RETRAGERE::pin = pin;
+bool RETRAGERE::operator==(const RETRAGERE &rhs) const {
+    return static_cast<const TRANZACTIE &>(*this) == static_cast<const TRANZACTIE &>(rhs) &&
+           cont == rhs.cont;
 }
+
+void RETRAGERE::executa() {
+    cont->retrage(suma,pin);
+}
+
+bool RETRAGERE::operator!=(const RETRAGERE &rhs) const {
+    return !(rhs == *this);
+}
+
+RETRAGERE::RETRAGERE(int id, float suma, int pin, ContBancar *cont) : TRANZACTIE(id, suma, pin), cont(cont) {}
+
