@@ -14,15 +14,13 @@ private:
 public:
     RETRAGERE(int id, float suma, int pin, ContBancar *cont);
 
-    ContBancar *getCont() const;
-
-    void setCont(ContBancar *cont);
-
     bool operator==(const RETRAGERE &rhs) const;
 
     bool operator!=(const RETRAGERE &rhs) const;
 
     void executa() override;
+
+    ~RETRAGERE() override;
 };
 
 

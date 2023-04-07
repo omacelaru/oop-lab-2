@@ -40,3 +40,7 @@ int TRANZACTIE::getId() const {
 void TRANZACTIE::setId(int id) {
     TRANZACTIE::id = id;
 }
+
+TRANZACTIE::~TRANZACTIE() {
+
+}

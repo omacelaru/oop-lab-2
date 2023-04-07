@@ -6,29 +6,38 @@
 #define OOP_CONTBANCAR_H
 
 #include <string>
+#include <ostream>
 //
 //#include "DEPUNERE.h"
 //#include "RETRAGERE.h"
 //#include "VerificareSold.h"
 
+
 class ContBancar {
-private:
+protected:
     std::string nume;
     std::string IBAN;
-    int pin;
+    std::string tip;
+    float pin;
     float sold;
 
-    void depune(float suma, int pin);
+private:
+    void depune(float suma, float pin);
 
-    void retrage(float suma, int pin);
+    void retrage(float suma, float pin);
 
-    float verificareSold(int pin) const;
+    float verificareSold(float pin) const;
 
 public:
     friend class DEPUNERE;
     friend class RETRAGERE;
     friend class VerificareSold;
 
+    void setTip1(const std::string &tip);
+
+    ContBancar(const ContBancar & rhs);
+
+    ContBancar(const std::string &nume, const std::string &iban, const std::string &tip, float pin, float sold);
 
     const std::string &getNume() const;
 
@@ -40,19 +49,25 @@ public:
 
     void setSold(float sold);
 
+    void setNume(const std::string &nume);
+
+    float getPin() const;
+
+    void setPin(float pin);
+
+    virtual void tipCONT() const;
+
+    virtual ~ContBancar();
+
     bool operator==(const ContBancar &rhs) const;
 
     bool operator!=(const ContBancar &rhs) const;
 
-    void setNume(const std::string &nume);
+    friend std::ostream &operator<<(std::ostream &os, const ContBancar &bancar);
 
-    int getPin() const;
+    const std::string &getTip() const;
 
-    void setPin(int pin);
-
-    ContBancar(const std::string &nume, const std::string &iban, int pin, float sold);
-
-    virtual void tipCont() const;
+    void setTip(const std::string &tip);
 };
 
 #endif //OOP_CONTBANCAR_H

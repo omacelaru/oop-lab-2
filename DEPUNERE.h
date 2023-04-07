@@ -15,15 +15,13 @@ public:
 
     DEPUNERE(int id, float suma, int pin, ContBancar *cont);
 
-    ContBancar *getCont() const;
-
-    void setCont(ContBancar *cont);
-
     bool operator==(const DEPUNERE &rhs) const;
 
     bool operator!=(const DEPUNERE &rhs) const;
 
     void executa() override;
+
+    ~DEPUNERE() override;
 };
 
 

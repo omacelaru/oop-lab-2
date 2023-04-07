@@ -7,11 +7,13 @@
 
 #include "ContBancar.h"
 
-class ContBancarTineret : public ContBancar{
+class ContBancarTineret : virtual public ContBancar{
 public:
-    void tipCont() const override;
+    void tipCONT() const override;
 
-    ContBancarTineret(const std::string &nume, const std::string &iban, int pin, float sold);
+    ContBancarTineret(const std::string &nume, const std::string &iban, const std::string &tip, float pin, float sold);
+
+    ~ContBancarTineret() override;
 
 };
 

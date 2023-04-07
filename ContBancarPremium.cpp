@@ -6,9 +6,15 @@
 #include <iostream>
 #include <string>
 
-ContBancarPremium::ContBancarPremium(const std::string &nume, const std::string &iban, int pin, float sold)
-        : ContBancar(nume, iban, pin, sold) {}
 
-void ContBancarPremium::tipCont() const {
+void ContBancarPremium::tipCONT() const {
     std::cout << "Sunt un cont premium\n";
 }
+
+ContBancarPremium::~ContBancarPremium() {
+
+}
+
+ContBancarPremium::ContBancarPremium(const std::string &nume, const std::string &iban, const std::string &tip,
+                                     float pin, float sold) : ContBancar(nume, iban, tip, pin, sold) {}
+

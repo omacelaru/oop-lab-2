@@ -38,6 +38,8 @@ public:
     int getPin() const;
 
     void setPin(int pin);
+
+    virtual ~TRANZACTIE();
 };
 
 

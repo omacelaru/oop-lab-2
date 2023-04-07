@@ -8,11 +8,15 @@
 #include <string>
 #include "ContBancar.h"
 
-class ContBancarPremium : public ContBancar {
+class ContBancarPremium : virtual public ContBancar {
 public:
-    ContBancarPremium(const std::string &nume, const std::string &iban, int pin, float sold);
+    ContBancarPremium(const std::string &nume, const std::string &iban, int pin, int tip, float sold);
 
-    void tipCont() const override;
+    ContBancarPremium(const std::string &nume, const std::string &iban, const std::string &tip, float pin, float sold);
+
+    void tipCONT() const override;
+
+    ~ContBancarPremium() override;
 };
 
 

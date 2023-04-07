@@ -21,16 +21,6 @@ void ContBancar::setSold(float sold) {
     ContBancar::sold = sold;
 }
 
-bool ContBancar::operator==(const ContBancar &rhs) const {
-    return nume == rhs.nume &&
-           IBAN == rhs.IBAN &&
-           sold == rhs.sold;
-}
-
-bool ContBancar::operator!=(const ContBancar &rhs) const {
-    return !(rhs == *this);
-}
-
 const std::string &ContBancar::getIban() const {
     return IBAN;
 }
@@ -39,35 +29,73 @@ void ContBancar::setIban(const std::string &iban) {
     IBAN = iban;
 }
 
-int ContBancar::getPin() const {
+float ContBancar::getPin() const {
     return pin;
 }
 
-void ContBancar::setPin(int pin) {
+void ContBancar::setPin(float pin) {
     ContBancar::pin = pin;
 }
 
-void ContBancar::depune(float suma, int pin) {
+void ContBancar::depune(float suma, float pin) {
     if(this->pin == pin)
         sold += suma;
 }
 
-void ContBancar::retrage(float suma, int pin) {
+void ContBancar::retrage(float suma, float pin) {
     if(this->pin == pin)
         sold -= suma;
 
 }
 
-float ContBancar::verificareSold(int pin) const {
+float ContBancar::verificareSold(float pin) const {
     if(this->pin == pin)
         return this->sold;
     else
         return -1;
 }
 
-ContBancar::ContBancar(const std::string &nume, const std::string &iban, int pin, float sold) : nume(nume), IBAN(iban),
-                                                                                                pin(pin), sold(sold) {}
-
-void ContBancar::tipCont() const {
+void ContBancar::tipCONT() const {
     std::cout << "Sunt un simplu cont\n";
 }
+
+ContBancar::~ContBancar() {
+
+}
+
+ContBancar::ContBancar(const ContBancar &rhs) {
+    nume = rhs.nume;
+    IBAN = rhs.IBAN;
+    pin = rhs.pin;
+    sold = rhs.sold;
+}
+
+bool ContBancar::operator==(const ContBancar &rhs) const {
+    return nume == rhs.nume &&
+           IBAN == rhs.IBAN &&
+           tip == rhs.tip &&
+           pin == rhs.pin &&
+           sold == rhs.sold;
+}
+
+std::ostream &operator<<(std::ostream &os, const ContBancar &bancar) {
+    os << "nume: " << bancar.nume << " IBAN: " << bancar.IBAN << " tip: " << bancar.tip << " pin: " << bancar.pin
+       << " sold: " << bancar.sold;
+    return os;
+}
+
+bool ContBancar::operator!=(const ContBancar &rhs) const {
+    return !(rhs == *this);
+}
+
+ContBancar::ContBancar(const std::string &nume, const std::string &iban, const std::string &tip, float pin, float sold)
+        : nume(nume), IBAN(iban), tip(tip), pin(pin), sold(sold) {}
+
+const std::string &ContBancar::getTip() const {
+    return tip;
+}
+
+void ContBancar::setTip(const std::string &tip) {
+    ContBancar::tip = tip;
+}
+

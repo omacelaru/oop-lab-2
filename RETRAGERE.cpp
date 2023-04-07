@@ -4,14 +4,6 @@
 
 #include "RETRAGERE.h"
 
-ContBancar *RETRAGERE::getCont() const {
-    return cont;
-}
-
-void RETRAGERE::setCont(ContBancar *cont) {
-    RETRAGERE::cont = cont;
-}
-
 bool RETRAGERE::operator==(const RETRAGERE &rhs) const {
     return static_cast<const TRANZACTIE &>(*this) == static_cast<const TRANZACTIE &>(rhs) &&
            cont == rhs.cont;
@@ -26,4 +18,8 @@ bool RETRAGERE::operator!=(const RETRAGERE &rhs) const {
 }
 
 RETRAGERE::RETRAGERE(int id, float suma, int pin, ContBancar *cont) : TRANZACTIE(id, suma, pin), cont(cont) {}
+
+RETRAGERE::~RETRAGERE() {
+
+}
 

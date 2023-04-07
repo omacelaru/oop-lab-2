@@ -4,13 +4,7 @@
 
 #include "DEPUNERE.h"
 
-ContBancar *DEPUNERE::getCont() const {
-    return cont;
-}
 
-void DEPUNERE::setCont(ContBancar *cont) {
-    DEPUNERE::cont = cont;
-}
 
 bool DEPUNERE::operator==(const DEPUNERE &rhs) const {
     return static_cast<const TRANZACTIE &>(*this) == static_cast<const TRANZACTIE &>(rhs) &&
@@ -26,3 +20,7 @@ void DEPUNERE::executa() {
 }
 
 DEPUNERE::DEPUNERE(int id, float suma, int pin, ContBancar *cont) : TRANZACTIE(id, suma, pin), cont(cont) {}
+
+DEPUNERE::~DEPUNERE() {
+
+}

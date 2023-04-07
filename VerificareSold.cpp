@@ -4,14 +4,6 @@
 
 #include "VerificareSold.h"
 
-ContBancar *VerificareSold::getCont() const {
-    return cont;
-}
-
-void VerificareSold::setCont(ContBancar *cont) {
-    VerificareSold::cont = cont;
-}
-
 VerificareSold::VerificareSold(int id, float suma, int pin, ContBancar *cont) : TRANZACTIE(id, suma, pin), cont(cont) {}
 
 bool VerificareSold::operator==(const VerificareSold &rhs) const {
@@ -25,4 +17,8 @@ bool VerificareSold::operator!=(const VerificareSold &rhs) const {
 
 void VerificareSold::executa() {
     cont->verificareSold(pin);
+}
+
+VerificareSold::~VerificareSold() {
+
 }
