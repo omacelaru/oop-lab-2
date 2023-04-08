@@ -22,11 +22,11 @@ protected:
     float sold;
 
 private:
-    void depune(float suma, float pin);
+    void depune(float suma);
 
-    void retrage(float suma, float pin);
+    void retrage(float suma);
 
-    float verificareSold(float pin) const;
+    void verificareSold() const;
 
 public:
     friend class DEPUNERE;
@@ -68,6 +68,8 @@ public:
     const std::string &getTip() const;
 
     void setTip(const std::string &tip);
+
+    bool verificaPin(float pin) const;
 };
 
 #endif //OOP_CONTBANCAR_H

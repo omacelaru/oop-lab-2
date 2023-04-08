@@ -8,12 +8,13 @@
 # include "TRANZACTIE.h"
 # include "ContBancar.h"
 
+
 class DEPUNERE : public TRANZACTIE {
 private:
-    ContBancar* cont;
+    std::shared_ptr<ContBancar> cont;
 public:
 
-    DEPUNERE(int id, float suma, int pin, ContBancar *cont);
+    DEPUNERE(int id, float suma, float pin, std::shared_ptr<ContBancar> cont);
 
     bool operator==(const DEPUNERE &rhs) const;
 

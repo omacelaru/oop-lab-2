@@ -10,10 +10,10 @@
 
 class VerificareSold : public TRANZACTIE{
 private:
-    ContBancar* cont;
+    std::shared_ptr<ContBancar> cont;
 public:
 
-    VerificareSold(int id, float suma, int pin, ContBancar *cont);
+    VerificareSold(int id, int pin, std::shared_ptr<ContBancar>cont);
 
 
     bool operator==(const VerificareSold &rhs) const;

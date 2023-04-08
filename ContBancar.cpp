@@ -3,6 +3,7 @@
 //
 
 #include "ContBancar.h"
+#include "InvalidPin.h"
 #include <iostream>
 
 const std::string &ContBancar::getNume() const {
@@ -37,22 +38,17 @@ void ContBancar::setPin(float pin) {
     ContBancar::pin = pin;
 }
 
-void ContBancar::depune(float suma, float pin) {
-    if(this->pin == pin)
+void ContBancar::depune(float suma) {
         sold += suma;
 }
 
-void ContBancar::retrage(float suma, float pin) {
-    if(this->pin == pin)
+void ContBancar::retrage(float suma) {
         sold -= suma;
 
 }
 
-float ContBancar::verificareSold(float pin) const {
-    if(this->pin == pin)
-        return this->sold;
-    else
-        return -1;
+void ContBancar::verificareSold() const {
+        std:: cout << "Contul detine: " << this->sold << "\n";
 }
 
 void ContBancar::tipCONT() const {
@@ -97,5 +93,14 @@ const std::string &ContBancar::getTip() const {
 
 void ContBancar::setTip(const std::string &tip) {
     ContBancar::tip = tip;
+}
+
+bool ContBancar::verificaPin(float pin) const {
+    if(this->pin == pin)
+        return true;
+    else{
+        throw InvalidPin();
+    }
+
 }
 

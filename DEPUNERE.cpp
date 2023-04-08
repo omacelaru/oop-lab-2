@@ -5,7 +5,6 @@
 #include "DEPUNERE.h"
 
 
-
 bool DEPUNERE::operator==(const DEPUNERE &rhs) const {
     return static_cast<const TRANZACTIE &>(*this) == static_cast<const TRANZACTIE &>(rhs) &&
            cont == rhs.cont;
@@ -16,10 +15,10 @@ bool DEPUNERE::operator!=(const DEPUNERE &rhs) const {
 }
 
 void DEPUNERE::executa() {
-    cont->depune(suma,pin);
+    cont->depune(suma);
 }
 
-DEPUNERE::DEPUNERE(int id, float suma, int pin, ContBancar *cont) : TRANZACTIE(id, suma, pin), cont(cont) {}
+DEPUNERE::DEPUNERE(int id, float suma, float pin, std::shared_ptr<ContBancar> cont) : TRANZACTIE(id, suma, pin), cont(cont) {}
 
 DEPUNERE::~DEPUNERE() {
 

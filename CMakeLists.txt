@@ -41,7 +41,7 @@ endif()
 ###############################################################################
 
 # NOTE: update executable name in .github/workflows/cmake.yml when changing name here
-add_executable(${PROJECT_NAME} main.cpp TRANZACTIE.cpp TRANZACTIE.h DEPUNERE.cpp DEPUNERE.h RETRAGERE.cpp RETRAGERE.h ContBancar.cpp ContBancar.h VerificareSold.cpp VerificareSold.h ContBancarPremium.cpp ContBancarPremium.h ContBancarTineret.cpp ContBancarTineret.h Meniu.cpp Meniu.h)
+add_executable(${PROJECT_NAME} main.cpp TRANZACTIE.cpp TRANZACTIE.h DEPUNERE.cpp DEPUNERE.h RETRAGERE.cpp RETRAGERE.h ContBancar.cpp ContBancar.h VerificareSold.cpp VerificareSold.h ContBancarPremium.cpp ContBancarPremium.h ContBancarTineret.cpp ContBancarTineret.h Meniu.cpp Meniu.h InputInvalidSold.cpp InputInvalidSold.h InvalidPin.cpp InvalidPin.h RetragereInvalida.cpp RetragereInvalida.h)
 
 ###############################################################################
 

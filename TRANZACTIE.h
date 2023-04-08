@@ -6,16 +6,17 @@
 #define OOP_TRANZACTIE_H
 
 # include <string>
+#include <memory>
 
 class TRANZACTIE {
 protected:
     static int numar_tranzactii;
     int id;
     float suma;
-    int pin;
+    float pin;
 
 public:
-    TRANZACTIE(int id, float suma, int pin);
+    TRANZACTIE(int id, float suma, float pin);
 
     static int getNumarTranzactii();
 

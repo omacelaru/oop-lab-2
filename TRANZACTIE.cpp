@@ -4,7 +4,6 @@
 
 #include "TRANZACTIE.h"
 
-
 int TRANZACTIE::numar_tranzactii = 0;
 
 int TRANZACTIE::getNumarTranzactii() {
@@ -31,7 +30,7 @@ bool TRANZACTIE::operator!=(const TRANZACTIE &rhs) const {
     return !(rhs == *this);
 }
 
-TRANZACTIE::TRANZACTIE(int id, float suma, int pin) : id(id), suma(suma), pin(pin) {}
+TRANZACTIE::TRANZACTIE(int id, float suma, float pin) : id(id), suma(suma), pin(pin) {numar_tranzactii++;}
 
 int TRANZACTIE::getId() const {
     return id;

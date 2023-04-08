@@ -4,7 +4,7 @@
 
 #include "VerificareSold.h"
 
-VerificareSold::VerificareSold(int id, float suma, int pin, ContBancar *cont) : TRANZACTIE(id, suma, pin), cont(cont) {}
+VerificareSold::VerificareSold(int id, int pin, std::shared_ptr<ContBancar>cont) : TRANZACTIE(id, 0, pin), cont(cont) {}
 
 bool VerificareSold::operator==(const VerificareSold &rhs) const {
     return static_cast<const TRANZACTIE &>(*this) == static_cast<const TRANZACTIE &>(rhs) &&
@@ -16,7 +16,7 @@ bool VerificareSold::operator!=(const VerificareSold &rhs) const {
 }
 
 void VerificareSold::executa() {
-    cont->verificareSold(pin);
+    cont->verificareSold();
 }
 
 VerificareSold::~VerificareSold() {

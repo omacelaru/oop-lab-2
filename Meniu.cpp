@@ -6,6 +6,7 @@
 #include "ContBancarTineret.h"
 
 #include "Meniu.h"
+#include "InputInvalidSold.h"
 
 #include <fstream>
 #include <iostream>
@@ -28,6 +29,11 @@ vector<shared_ptr<ContBancar>> Meniu::citireDate() {
         getline(f, nume);
         getline(f, IBAN);
         f.get();
+
+        if(sold < 0 ){
+            sold = 0;
+            throw InputInvalidSold();
+        }
 
         if (tipCont == "1") { // tineret
             conturi.push_back(make_shared<ContBancarTineret> (nume, IBAN, tipCont,pin,sold));
