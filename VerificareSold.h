@@ -13,7 +13,7 @@ private:
     std::shared_ptr<ContBancar> cont;
 public:
 
-    VerificareSold(int id, int pin, std::shared_ptr<ContBancar>cont);
+    VerificareSold(int id, float pin, std::shared_ptr<ContBancar>cont);
 
 
     bool operator==(const VerificareSold &rhs) const;

@@ -19,7 +19,7 @@ float TRANZACTIE::getSuma() const {
 }
 
 void TRANZACTIE::setSuma(float suma) {
-    TRANZACTIE::suma = suma;
+    this->suma = suma;
 }
 
 bool TRANZACTIE::operator==(const TRANZACTIE &rhs) const {
@@ -37,7 +37,7 @@ int TRANZACTIE::getId() const {
 }
 
 void TRANZACTIE::setId(int id) {
-    TRANZACTIE::id = id;
+    this->id = id;
 }
 
 TRANZACTIE::~TRANZACTIE() {

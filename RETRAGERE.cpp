@@ -22,7 +22,7 @@ bool RETRAGERE::operator!=(const RETRAGERE &rhs) const {
     return !(rhs == *this);
 }
 
-RETRAGERE::RETRAGERE(int id, float suma, int pin, std::shared_ptr<ContBancar> cont) : TRANZACTIE(id, suma, pin),
+RETRAGERE::RETRAGERE(int id, float suma, float pin, std::shared_ptr<ContBancar> cont) : TRANZACTIE(id, suma, pin),
                                                                                       cont(cont) {}
 
 RETRAGERE::~RETRAGERE() {

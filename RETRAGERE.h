@@ -12,7 +12,7 @@ class RETRAGERE : public TRANZACTIE {
 private:
     std::shared_ptr<ContBancar> cont;
 public:
-    RETRAGERE(int id, float suma, int pin, std::shared_ptr<ContBancar> cont);
+    RETRAGERE(int id, float suma, float pin, std::shared_ptr<ContBancar> cont);
 
     bool operator==(const RETRAGERE &rhs) const;
 

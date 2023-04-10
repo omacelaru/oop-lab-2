@@ -1,7 +1,6 @@
 #include "ContBancar.h"
 #include "ContBancarPremium.h"
 #include "ContBancarTineret.h"
-#include "TRANZACTIE.h"
 #include "RETRAGERE.h"
 #include "DEPUNERE.h"
 #include "VerificareSold.h"
@@ -23,7 +22,7 @@ int main() {
     try {
         vector<shared_ptr<ContBancar>> conturi = Meniu.citireDate();
 
-    bool isRunning = true;
+    bool isRunning;
     ifstream f("../tastatura.txt");
     ifstream g("../conturi.txt");
     ifstream h("../pinuri.txt");

@@ -11,7 +11,7 @@ const std::string &ContBancar::getNume() const {
 }
 
 void ContBancar::setNume(const std::string &nume) {
-    ContBancar::nume = nume;
+    this->nume = nume;
 }
 
 float ContBancar::getSold() const {
@@ -19,7 +19,7 @@ float ContBancar::getSold() const {
 }
 
 void ContBancar::setSold(float sold) {
-    ContBancar::sold = sold;
+    this->sold = sold;
 }
 
 const std::string &ContBancar::getIban() const {
