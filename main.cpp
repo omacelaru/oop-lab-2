@@ -36,7 +36,7 @@ int main() {
             decizieCont--;
             cout << "Contul ales este:\nNume: " << conturi[decizieCont]->getNume() << "\nIBAN: "
                  << conturi[decizieCont]->getIban() << endl;
-            bool isRunning = true;
+
             try {
                 float pin;
                 cout << "Introdu pin:\n";
@@ -45,6 +45,7 @@ int main() {
                 cout << "Pinul introdus a fost: " << pin << endl;
                 if (conturi[decizieCont]->verificaPin(pin)) {
                     // alegerea operatiunilor
+                    bool isRunning = true;
                     while (isRunning) {
                         float suma;
                         int decizie, id = 0;
