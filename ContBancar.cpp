@@ -39,16 +39,16 @@ void ContBancar::setPin(float pin) {
 }
 
 void ContBancar::depune(float suma) {
-        sold += suma;
+    sold += suma;
 }
 
 void ContBancar::retrage(float suma) {
-        sold -= suma;
+    sold -= suma;
 
 }
 
 void ContBancar::verificareSold() const {
-        std:: cout << "Contul detine: " << this->sold << "\n";
+    std::cout << "Contul detine: " << this->sold << "\n";
 }
 
 void ContBancar::tipCONT() const {
@@ -74,12 +74,6 @@ bool ContBancar::operator==(const ContBancar &rhs) const {
            sold == rhs.sold;
 }
 
-std::ostream &operator<<(std::ostream &os, const ContBancar &bancar) {
-    os << "nume: " << bancar.nume << " IBAN: " << bancar.IBAN << " tip: " << bancar.tip << " pin: " << bancar.pin
-       << " sold: " << bancar.sold;
-    return os;
-}
-
 bool ContBancar::operator!=(const ContBancar &rhs) const {
     return !(rhs == *this);
 }
@@ -96,11 +90,17 @@ void ContBancar::setTip(const std::string &tip) {
 }
 
 bool ContBancar::verificaPin(float pin) const {
-    if(this->pin == pin)
+    if (this->pin == pin)
         return true;
-    else{
+    else {
         throw InvalidPin();
     }
 
+}
+
+std::ostream &operator<<(std::ostream &os, const ContBancar &bancar) {
+    os << "nume: " << bancar.nume << " IBAN: " << bancar.IBAN << " tip: " << bancar.tip << " pin: " << bancar.pin
+       << " sold: " << bancar.sold;
+    return os;
 }
 

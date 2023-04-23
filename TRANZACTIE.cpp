@@ -30,7 +30,7 @@ bool TRANZACTIE::operator!=(const TRANZACTIE &rhs) const {
     return !(rhs == *this);
 }
 
-TRANZACTIE::TRANZACTIE(int id, float suma, float pin) : id(id), suma(suma), pin(pin) {numar_tranzactii++;}
+TRANZACTIE::TRANZACTIE(int id, float suma, float pin) : id(id), suma(suma), pin(pin) { numar_tranzactii++; }
 
 int TRANZACTIE::getId() const {
     return id;

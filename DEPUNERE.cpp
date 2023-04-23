@@ -18,7 +18,8 @@ void DEPUNERE::executa() {
     cont->depune(suma);
 }
 
-DEPUNERE::DEPUNERE(int id, float suma, float pin, std::shared_ptr<ContBancar> cont) : TRANZACTIE(id, suma, pin), cont(cont) {}
+DEPUNERE::DEPUNERE(int id, float suma, float pin, std::shared_ptr<ContBancar> cont) : TRANZACTIE(id, suma, pin),
+                                                                                      cont(cont) {}
 
 DEPUNERE::~DEPUNERE() {
 

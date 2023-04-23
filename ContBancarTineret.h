@@ -7,7 +7,7 @@
 
 #include "ContBancar.h"
 
-class ContBancarTineret : virtual public ContBancar{
+class ContBancarTineret : virtual public ContBancar {
 public:
     void tipCONT() const override;
 

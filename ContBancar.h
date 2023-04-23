@@ -30,12 +30,14 @@ private:
 
 public:
     friend class DEPUNERE;
+
     friend class RETRAGERE;
+
     friend class VerificareSold;
 
     void setTip1(const std::string &tip);
 
-    ContBancar(const ContBancar & rhs);
+    ContBancar(const ContBancar &rhs);
 
     ContBancar(const std::string &nume, const std::string &iban, const std::string &tip, float pin, float sold);
 
