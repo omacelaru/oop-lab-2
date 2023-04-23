@@ -59,12 +59,7 @@ ContBancar::~ContBancar() {
 
 }
 
-ContBancar::ContBancar(const ContBancar &rhs) {
-    nume = rhs.nume;
-    IBAN = rhs.IBAN;
-    pin = rhs.pin;
-    sold = rhs.sold;
-}
+ContBancar::ContBancar(const ContBancar &rhs) : nume(rhs.nume) ,IBAN(rhs.IBAN), pin(rhs.pin), sold(rhs.sold){}
 
 bool ContBancar::operator==(const ContBancar &rhs) const {
     return nume == rhs.nume &&

@@ -33,7 +33,6 @@ vector<shared_ptr<ContBancar>> Meniu::citireDate() {
         f.get();
 
         if (sold < 0) {
-            sold = 0;
             throw InputInvalidSold();
         }
 

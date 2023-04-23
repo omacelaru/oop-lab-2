@@ -14,19 +14,19 @@
 
 
 class ContBancar {
-protected:
-    std::string nume;
-    std::string IBAN;
-    std::string tip;
-    float pin;
-    float sold;
-
 private:
     void depune(float suma);
 
     void retrage(float suma);
 
     void verificareSold() const;
+
+protected:
+    std::string nume;
+    std::string IBAN;
+    std::string tip;
+    float pin;
+    float sold;
 
 public:
     friend class DEPUNERE;
